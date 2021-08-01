@@ -123,6 +123,19 @@
 		font-weight:500;
 		font-size:48px;
 	}
+	
+	.gallery{
+		display:grid;
+		grid-template-columns:1fr 1fr;
+	}
+	
+	.gallery > div{
+		height:300px;
+	}
+	
+	.gallery div:first-of-type .img{
+		background-image:url(house1.jpg);	
+	}
 </style>
 <body>
 	<div class="bg"></div>
@@ -150,8 +163,13 @@
 	</div>
 	<section>
 		<h1>Sold Properties</h1>
-		<div>
-			1 2 3
+		<div class="cards">
+			<div>
+				
+			</div>
+			<div>
+				
+			</div>
 		</div>
 	</section>
 </body>
