@@ -148,6 +148,10 @@
 		grid-gap: 40px;
 	}
 	
+	.cards > div{
+		position:relative;
+	}
+	
 	.cards > div .img{
 		height:300px;
 		background-position: center;
@@ -180,6 +184,17 @@
 	
 	.cards .text div:last-of-type{
 		font-size:16px;
+	}
+	
+	.sold{
+		padding:20px;
+		background:#ffe512;
+		font-weight:bold;
+		font-family: "Georama", sans-serif;
+		color:#111;
+		position:absolute;
+		top:20px;
+		right:0;
 	}
 </style>
 <body>
@@ -216,6 +231,7 @@
 		<h1>Sold Properties</h1>
 		<div class="cards">
 			<div>
+				<div class="sold">SOLD</div>
 				<div class="img"></div>
 				<div class="text">
 					<div>123 Fake Street, Invercargill</div>
@@ -223,6 +239,7 @@
 				</div>
 			</div>
 			<div>
+				<div class="sold">SOLD</div>
 				<div class="img"></div>
 				<div class="text">
 					<div>123 Fake Street, Invercargill</div>
