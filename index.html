@@ -72,6 +72,12 @@
 		z-index:1;
 	}
 	
+	.video_container{
+		position:relative;
+		height:100vh;
+		overflow:hidden;
+	}
+	
 	video#main{
 		position:absolute;
 		top:0;
@@ -81,12 +87,14 @@
 	}
 	
 	.main_div{
-		height:100vh;
 		display:flex;
 		flex-direction:column;
 		z-index: 1;
 		position: absolute;
 		top:0;
+		bottom:0;
+		left:0;
+		right:0;
 		padding: 40px;
 		color:white;
 	}
@@ -184,16 +192,18 @@
 			<div><a href="#">Contact</a></div>
 		</div>
 	</nav>
-	<video id="main" autoplay muted loop>
-	  <source src="home.mp4" type="video/mp4">
-	  Your browser does not support the video tag.
-	</video>
-	<div class="main_div">
-		<div>Arick John</div>
-		<div>Quality homes.</div>
-		<div>Quality experience.</div>
+	<div class="video_container">
+		<video id="main" autoplay muted loop>
+		  <source src="home.mp4" type="video/mp4">
+		  Your browser does not support the video tag.
+		</video>
+		<div class="main_div">
+			<div>Arick John</div>
+			<div>Quality homes.</div>
+			<div>Quality experience.</div>
+		</div>
 	</div>
-	<div style="height:100vh"></div>
+	
 	<section>
 		<h1>Sold Properties</h1>
 		<div class="cards">
