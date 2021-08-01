@@ -43,8 +43,8 @@
 		bottom:0;
 		left:0;
 		right:0;
-		background-color:transparent;
-		opacity:.2;
+		background-color:black;
+		opacity:0;
 		z-index:1;	
 	}
 	nav > div{
@@ -93,7 +93,7 @@
 	
 	video#main{
 		position:absolute;
-		top:0;
+		top:-20px;
 		left:0;
 		z-index:0;
 		width:110%;
@@ -294,14 +294,14 @@ So if you are looking to sell your present home or investment property or you ar
 			    d.style.fontSize = "13px";
 		    });
 		    document.querySelector(".name").style.fontSize = "20px";
-		    document.querySelector("i").style.backgroundColor = "black";
+		    document.querySelector("i").style.opacity = 0.2;
 		  } else {
 		    document.querySelectorAll("nav > div").forEach(d => {
 			    d.style.padding = "40px";
 			    d.style.fontSize = "16px";
 		    });
 		    document.querySelector(".name").style.fontSize = "28px";
-		    document.querySelector("i").style.backgroundColor = "transparent";
+		    document.querySelector("i").style.opacity = 0;
 		  }
 		}
 	</script>
