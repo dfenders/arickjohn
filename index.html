@@ -129,7 +129,7 @@
 		grid-template-columns:1fr 1fr;
 	}
 	
-	.cards > div{
+	.cards > div .img{
 		height:300px;
 	}
 	
@@ -139,6 +139,10 @@
 	
 	.cards div:last-of-type .img{
 		background-image:url(house2.jpeg);	
+	}
+	
+	.cards .text{
+		background:white;	
 	}
 </style>
 <body>
@@ -170,9 +174,15 @@
 		<div class="cards">
 			<div>
 				<div class="img"></div>
+				<div class="text">
+					123 Fake Street, Invercargill
+				</div>
 			</div>
 			<div>
 				<div class="img"></div>
+				<div class="text">
+					123 Fake Street, Invercargill
+				</div>
 			</div>
 		</div>
 	</section>
