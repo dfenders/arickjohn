@@ -69,15 +69,21 @@
 		display:flex;
 		flex-direction:column;
 		z-index: 1;
-		position: relative;
+		position: absolute;
+		top:0;
 		padding: 40px;
 		color:white;
 	}
 	
 	.main_div div:first-of-type{
-		font-family:"Georama", sans-serif;	
-		font-weight:300;
-		margin-top:auto;
+		font-family: "Georama", sans-serif;
+		font-weight: 300;
+		margin-top: auto;
+		border-right: 100px solid yellow;
+		width: fit-content;
+		padding-right: 10px;
+		border-left: 20px solid yellow;
+		padding-left: 10px;
 	}
 	.main_div div:not(:first-of-type){
 		font-family:"Hahmlet", sans-serif;	
@@ -86,6 +92,8 @@
 	}
 	.main_div div:last-of-type{
 		margin-bottom:auto;	
+		border-bottom: 20px solid yellow;
+    		padding-bottom: 10px;
 	}
 </style>
 <body>
