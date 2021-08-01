@@ -18,10 +18,15 @@
 	nav{
 		display:flex;
 		text-transform:uppercase;
+		color:white;
+		position:relative;
+		z-index:1;
 	}
 	nav > div{
+		position:relative;
+		z-index:1;
 		display:flex;
-		padding:20px;
+		padding:40px;
 	}
 	nav > div:last-of-type{
 		margin-left:auto;	
@@ -33,6 +38,17 @@
 	    padding-left:20px;	
 	}
 	
+	.bg{
+		position:absolute;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		background:black;
+		opacity:.1;
+		z-index:0;
+	}
+	
 	video#main{
 		position:absolute;
 		top:0;
@@ -42,6 +58,7 @@
 </style>
 <body>
 	<nav>
+		<i class="bg"></i>
 		<div>
 			<div>Sold</div>
 			<div>Properties</div>
@@ -53,7 +70,7 @@
 			<div>Contact</div>
 		</div>
 	</nav>
-	<video id="main" width="100%" autoplay>
+	<video id="main" width="100%" autoplay muted loop>
 	  <source src="pexels-kindel-media-7578541.mp4" type="video/mp4">
 	  Your browser does not support the video tag.
 	</video>
