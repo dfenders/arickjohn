@@ -29,8 +29,11 @@
 		display:flex;
 		text-transform:uppercase;
 		color:white;
-		position:relative;
-		z-index:1;
+		position:fixed;
+		top:0;
+		left:0;
+		right:0;
+		z-index:3;
 		align-items:baseline;
 	}
 	nav > div{
@@ -114,7 +117,6 @@
 	
 	section{
 		color:white;
-		margin-top:100vh;
 		padding:40px;
 		z-index: 2;
     		position: relative;
@@ -123,7 +125,8 @@
 	section h1{
 		font-family:"Hahmlet", sans-serif;	
 		font-weight:500;
-		font-size:48px;
+		font-size:24px;
+		margin-top:0;
 	}
 	
 	.cards{
@@ -190,6 +193,7 @@
 		<div>Quality homes.</div>
 		<div>Quality experience.</div>
 	</div>
+	<div style="height:100vh"></div>
 	<section>
 		<h1>Sold Properties</h1>
 		<div class="cards">
