@@ -42,6 +42,7 @@
 		display:flex;
 		padding:40px;
 		transition:.4s;
+		font-size: 16px;
 	}
 	nav > div:last-of-type{
 		margin-left:auto;	
@@ -277,11 +278,13 @@ So if you are looking to sell your present home or investment property or you ar
 		  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
 		    document.querySelectorAll("nav > div").forEach(d => {
 			    d.style.padding = "20px 40px";
+			    d.style.fontSize = "13px";
 		    });
 		    document.querySelector(".name").style.fontSize = "20px";
 		  } else {
 		    document.querySelectorAll("nav > div").forEach(d => {
 			    d.style.padding = "40px";
+			    d.style.fontSize = "16px";
 		    });
 		    document.querySelector(".name").style.fontSize = "28px";
 		  }
