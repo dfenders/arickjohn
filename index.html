@@ -115,7 +115,7 @@
 	section{
 		color:white;
 		margin-top:100vh;
-		padding:0 40px 40px;
+		padding:40px;
 	}
 	
 	section h1{
@@ -124,17 +124,21 @@
 		font-size:48px;
 	}
 	
-	.gallery{
+	.cards{
 		display:grid;
 		grid-template-columns:1fr 1fr;
 	}
 	
-	.gallery > div{
+	.cards > div{
 		height:300px;
 	}
 	
-	.gallery div:first-of-type .img{
+	.cards div:first-of-type .img{
 		background-image:url(house1.jpg);	
+	}
+	
+	.cards div:last-of-type .img{
+		background-image:url(house2.jpg);	
 	}
 </style>
 <body>
