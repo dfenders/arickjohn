@@ -66,16 +66,26 @@
 	
 	.main_div{
 		height:100vh;
+		display:flex;
+		flex-direction:column;
+		z-index: 1;
+		position: relative;
+		padding: 40px;
+		color:white;
 	}
 	
 	.main_div div:first-of-type{
 		font-family:"Georama", sans-serif;	
 		font-weight:300;
+		margin-top:auto;
 	}
 	.main_div div:not(:first-of-type){
 		font-family:"Hahmlet", sans-serif;	
 		font-weight:500;
 		font-size:48px;
+	}
+	.main_div div:last-of-type{
+		margin-bottom:auto;	
 	}
 </style>
 <body>
