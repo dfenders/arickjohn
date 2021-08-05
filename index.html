@@ -230,6 +230,11 @@
 		position:relative;
 		z-index:20;
 	}
+	.form_container{
+		display:grid;
+		grid-template-columns:1fr 1fr;
+		grid-gap:20px;
+	}
 </style>
 <body>
 	<div class="bg"></div>
@@ -324,14 +329,15 @@ So if you are looking to sell your present home or investment property or you ar
 	<section class="valuation">
 		<h1>Online appraisal</h1>
 		<div class="form_container">
-			<div class="form_row">
+			<div>
 				<label for="firstName">First name</label>
 				<input type="text" id="firstName" name="firstName" />
-			
+			</div>
+			<div>		
 				<label for="lastName">Last name</label>
 				<input type="text" id="lastName" name="lastName" />
 			</div>
-			<div class="form_row">
+			<div>
 				<label for="email">Email</label>
 				<input type="text" id="email" name="email" />
 			</div>
