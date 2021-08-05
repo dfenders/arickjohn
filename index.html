@@ -234,10 +234,17 @@
 		display:grid;
 		grid-template-columns:1fr 1fr;
 		grid-gap:20px;
+		width:75%;
 	}
 	.form_container > div{
 		display: flex;
     		flex-direction: column;	
+	}
+	.form_container label{
+		padding-bottom:10px;	
+	}
+	.form_container input[type="text"]{
+		padding:10px;	
 	}
 </style>
 <body>
@@ -344,6 +351,10 @@ So if you are looking to sell your present home or investment property or you ar
 			<div>
 				<label for="email">Email</label>
 				<input type="text" id="email" name="email" />
+			</div>
+			<div>
+				<label for="mobile">Mobile</label>
+				<input type="text" id="mobile" name="mobile" />
 			</div>
 		</div>
 	</div>
