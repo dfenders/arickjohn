@@ -385,7 +385,7 @@ So if you are looking to sell your present home or investment property or you ar
 			</div>
 		</div>
 		<h2>Property details</h2>
-		<div class="form_container">
+		<div class="form_container" style="grid-template-columns: 1fr 1fr 1fr;">
 			<div>
 				<label for="owner">Is the property owner occupied?</label>
 				<select id="owner" name="owner">
@@ -393,6 +393,7 @@ So if you are looking to sell your present home or investment property or you ar
 					<option value="tenanted">Tenanted</option>
 				</select>
 			</div>
+			<div></div>
 			<div></div>
 			<div>
 				<label for="bedrooms">Bedrooms</label>
@@ -414,6 +415,50 @@ So if you are looking to sell your present home or investment property or you ar
 					<option value="4">4</option>
 					<option value="5">5</option>
 					<option value="6+">6+</option>
+				</select>
+			</div>
+			<div>
+				<label for="toilets">Separate toilets</label>
+				<select id="toilets" name="toilets">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6+">6+</option>
+				</select>
+			</div>
+			<div>
+				<label for="property">Property type</label>
+				<select id="property" name="property">
+					<option value="freestanding">Freestanding house</option>
+					<option value="semi">Semi-detached house</option>
+					<option value="unit">Apartment/unit</option>
+					<option value="townhouse">Terrace townhouse</option>
+					<option value="duplex">Duplex</option>
+					<option value="rural">Rural/farm</option>
+					<option value="section">Land only/section</option>
+				</select>
+			</div>
+			<div>
+				<label for="levels">Number of levels</label>
+				<select id="levels" name="levels">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4+">4+</option>
+				</select>
+			</div>
+			<div>
+				<label for="parking">Parking</label>
+				<select id="parking" name="parking">
+					<option value="none">None</option>
+					<option value="offstreet">Off street only</option>
+					<option value="carport1">Single carport</option>
+					<option value="carport2">Double carport</option>
+					<option value="garage1">Single garage</option>
+					<option value="garage2">Double garage</option>
+					<option value="other">Other</option>
 				</select>
 			</div>
 		</div>
