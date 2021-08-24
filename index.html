@@ -172,11 +172,17 @@
 		position:relative;
 	}
 	
-	.cols > div .img, .cols > a .img{
+	.cols > div .img_wrapper, .cols > a .img_wrapper{
 		height:300px;
+		overflow:hidden;
+	}
+	
+	.img_wrapper > .img{
+		transform:scale(1);
+		width:100%;
+  		height:100%;
 		background-position: center;
-    		background-size: cover;
-		zoom:1;
+    		background-size: cover;		
 		transition:all 0.4s;
 	}
 	
@@ -213,7 +219,7 @@
 	}
 	
 	.card:hover .img {
-		zoom:1.2;
+		transform:scale(1.1);
 	}
 	
 	.sold{
@@ -312,7 +318,9 @@ So if you are looking to sell your present home or investment property or you ar
 		<div class="cols">
 			<a href="https://rwdunedin.co.nz/properties/sold-residential/invercargill/appleby-9812/house/2453326" target="_blank" class="card">
 				<div class="sold">SOLD</div>
-				<div class="img" style="background-image:url(sold1.jpg);"></div>
+				<div class="img_wrapper">
+					<div class="img" style="background-image:url(sold1.jpg);"></div>
+				</div>
 				<div class="text">
 					<div>64 O'Hara Street, Appleby, Invercargill</div>
 					<div>30 Jan 2021</div>
@@ -320,7 +328,9 @@ So if you are looking to sell your present home or investment property or you ar
 			</a>
 			<a href="https://rwdunedin.co.nz/properties/sold-residential/invercargill/appleby-9812/house/2445531" target="_blank" class="card">
 				<div class="sold">SOLD</div>
-				<div class="img" style="background-image:url(sold2.jpg);"></div>
+				<div class="img_wrapper">
+					<div class="img" style="background-image:url(sold2.jpg);"></div>
+				</div>
 				<div class="text">
 					<div>95 Conon Street, Appleby, Invercargill</div>
 					<div>25 Jan 2021</div>
