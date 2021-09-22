@@ -547,9 +547,19 @@
 			</div>
 			<div></div>
 			<div></div>
-			<div>
+			<div style="grid-column:span 3">
 				<label for="aspects">Other aspects of the property (check all that apply)</label>
-				<input type="checkbox" name="aspects" value="seaviews" />
+				<div style="display:grid;grid-template-columns:1fr 1fr 1fr">
+					<div>
+						<input type="checkbox" name="aspects" value="seaviews" /><span>Sea views</span>
+					</div>
+					<div>
+						<input type="checkbox" name="aspects" value="cityviews" /><span>City views</span>
+					</div>
+					<div>
+						<input type="checkbox" name="aspects" value="ruralviews" /><span>Rural views</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
