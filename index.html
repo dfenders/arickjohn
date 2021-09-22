@@ -532,7 +532,18 @@
 			<div></div>
 			<div style="grid-column:span 3">
 				<label for="condition">What is the condition of the property?</label>
-				<textarea id="condition" name="condition" style="min-height:200px;resize: vertical;"></textarea>
+				<textarea id="condition" name="condition" style="min-height:200px;resize: vertical;padding:10px;font-size:16px"></textarea>
+			</div>
+			<div>
+				<label for="timeframe">Timeframe to sell</label>
+				<select id="timeframe" name="timeframe">
+					<option value="notFilled"></option>
+					<option value="0_3">0 - 3 months</option>
+					<option value="3_6">3 - 6 months</option>					
+					<option value="6_12">6 - 12 months</option>
+					<option value="1_2">1 - 2 years</option>
+					<option value="2">2+ years</option>
+				</select>
 			</div>
 		</div>
 	</div>
