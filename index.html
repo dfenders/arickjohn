@@ -269,6 +269,7 @@
 	.form_container input[type="text"], .form_container select{
 		padding:10px;	
 	}	
+	span.checkbox{ margin-left:10px }
 </style>
 <body>
 	<div class="bg"></div>
@@ -551,13 +552,24 @@
 				<label for="aspects">Other aspects of the property (check all that apply)</label>
 				<div style="display:grid;grid-template-columns:1fr 1fr 1fr">
 					<div>
-						<input type="checkbox" name="aspects" value="seaviews" /><span>Sea views</span>
+						<input type="checkbox" name="aspects" value="seaviews" /><span class="checkbox">Sea views</span>
 					</div>
 					<div>
-						<input type="checkbox" name="aspects" value="cityviews" /><span>City views</span>
+						<input type="checkbox" name="aspects" value="cityviews" /><span class="checkbox">City views</span>
 					</div>
 					<div>
-						<input type="checkbox" name="aspects" value="ruralviews" /><span>Rural views</span>
+						<input type="checkbox" name="aspects" value="ruralviews" /><span class="checkbox">Rural views</span>
+					</div>
+				</div>
+				<div style="display:grid;grid-template-columns:1fr 1fr 1fr">
+					<div>
+						<input type="checkbox" name="aspects" value="indoor" /><span class="checkbox">Indoor fire</span>
+					</div>
+					<div>
+						<input type="checkbox" name="aspects" value="outdoor" /><span class="checkbox">Outdoor fire</span>
+					</div>
+					<div>
+						<input type="checkbox" name="aspects" value="heatpump" /><span class="checkbox">Heat pump / air conditioner</span>
 					</div>
 				</div>
 			</div>
