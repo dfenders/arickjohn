@@ -270,6 +270,17 @@
 		padding:10px;	
 	}	
 	span.checkbox{ margin-left:10px }
+	
+	
+	@media only screen 
+	and (min-device-width: 320px) 
+	and (max-device-width: 480px)
+	and (-webkit-min-device-pixel-ratio: 2)
+	and (orientation: landscape) {
+		.cols, .form_container{
+			grid-template-columns:1fr;	
+		}
+	}
 </style>
 <body>
 	<div class="bg"></div>
