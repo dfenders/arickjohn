@@ -52,6 +52,9 @@
 		z-index:1;	
 		transition:0.4s;
 	}
+	nav > i.shrunk{
+		opacity:0.5;	
+	}
 	nav > div{
 		position:relative;
 		z-index:1;
@@ -302,6 +305,8 @@
 		}
 		
 		nav div:not(.name){ display:none }
+		
+		nav > i.shrunk{ opacity:1 }
 	}
 </style>
 <body>
@@ -650,14 +655,14 @@
 			    d.style.fontSize = "13px";
 		    });
 		    document.querySelector(".name").style.fontSize = "20px";
-		    document.querySelector("i").style.opacity = 0.5;
+		    document.querySelector("i").classList.add("shrunk");
 		  } else {
 		    document.querySelectorAll("nav > div").forEach(d => {
 			    d.style.padding = "40px";
 			    d.style.fontSize = "16px";
 		    });
 		    document.querySelector(".name").style.fontSize = "28px";
-		    document.querySelector("i").style.opacity = 0;
+		    document.querySelector("i").classList.remove("shrunk");
 		  }
 		}
 	</script>
