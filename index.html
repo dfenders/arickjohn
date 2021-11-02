@@ -7,6 +7,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Georama:wght@100;200;300;400;500;600&family=Hahmlet:wght@500&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/953116f3a1.js" crossorigin="anonymous"></script>
 </head>
 <style>
 	body{
@@ -274,11 +275,18 @@
 	}	
 	span.checkbox{ margin-left:10px }
 	
+	.mobile_menu{
+		display:none;	
+	}
+	
 	
 	@media only screen 
 	and (min-device-width: 320px) 
 	and (max-device-width: 1200px)
 	{
+		.mobile_menu{
+			display:block;	
+		}
 		.cols, .form_container{
 			display:flex!important;
 			flex-direction: column!important;
@@ -320,6 +328,7 @@
 	<nav>
 		<i></i>
 		<div class="name">Arick John</div>
+		<span class="mobile_menu fas fa-bars"></span>
 		<div>
 			<div><a href="#sold">Sold</a></div>
 			<div><a href="#listings">Properties</a></div>
