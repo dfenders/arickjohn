@@ -416,15 +416,7 @@
 	<section class="white" id="listings">
 		<h1>Current Listings</h1>
 		<div class="cols">
-			<a href="https://rwdunedin.co.nz/properties/residential-for-sale/dunedin-city/dunedin-central-9012/house/2594058" target="_blank" class="card">
-				<div class="img_wrapper">
-					<div class="img" style="background-image:url(https://cdn6.ep.dynamics.net/s3/rw-propertyimages/d840-H2594058-43724987__1633575116-30126-PROFILE2.jpg?width=1280);"></div>
-				</div>
-				<div class="text">
-					<div>1 and 2/223 High Street, Dunedin Central, Dunedin</div>
-					<div>Negotiation over $699,000</div>
-				</div>
-			</a>	
+				
 		</div>
 		<div class="more"><a href="https://rwdunedin.co.nz/agents/arick-john/48614" target="_blank">See more &gt;&gt;</a></div>
 	</section>
@@ -679,7 +671,41 @@
 		})
 		.then(res => res.json())
 		.then(results => {
-			console.log(results);	
+			results.data.forEach(d => {
+				d.value.agents.forEach(a => {
+					if(a.email == "arick.john@raywhite.com")
+					{
+						let an = document.createElement("a");
+						an.classList.add("card");
+						let prop_url = d.value.links.map(l => if(l.code == "PRL") return l.url)[0];
+						an.setAttribute("href", prop_url);
+						
+						let img_wrapper = document.createElement("div");
+						img_wrapper.classList.add("img_wrapper");
+						
+						let img = document.createElement("div");
+						img.classList.add("img");
+						img.style.backgroundImage = `url(${d.images[0].url})`;
+						
+						img_wrapper.append(img);
+						
+						let text = document.createElement("div");
+						text.classList.add("text");
+						
+						let address = document.createElement("div");
+						address.innerHTML = d.address.formatted;
+						
+						let price = document.createElement("div");
+						price.innerHTML = d.displayPrice;
+						
+						text.append(address,price);
+						
+						an.append(img_wrapper,text);
+						
+						document.querySelector("#listings .cols").append(an);
+					}
+				});
+			});
 		})
 		
 		window.onscroll = function() {scrollFunction()};
