@@ -677,7 +677,7 @@
 					{
 						let an = document.createElement("a");
 						an.classList.add("card");
-						let prop_url = d.value.links.map(l => if(l.code == "PRL") return l.url)[0];
+						let prop_url = d.value.links.map(l => { if(l.code == "PRL") return l.url})[0];
 						an.setAttribute("href", prop_url);
 						
 						let img_wrapper = document.createElement("div");
