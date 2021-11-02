@@ -669,6 +669,16 @@
 	</div>
 	</body>
 	<script>
+		let data = {"size":50,"statusCode":"CUR","typeCode":"SAL","sort":"creationTime desc","organisationId":[391],"from":0};
+		fetch("https://raywhiteapi.ep.dynamics.net/v1/listings?apiKey=FB889BB8-4AC9-40C2-829A-DD42D51626DE",{
+			method:'post',
+			body: JSON.stringify(data)
+		})
+		.then(res => res.json())
+		.then(results => {
+			console.log(results);	
+		})
+		
 		window.onscroll = function() {scrollFunction()};
 
 		function scrollFunction() {
