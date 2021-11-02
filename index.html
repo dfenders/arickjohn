@@ -685,7 +685,7 @@
 						
 						let img = document.createElement("div");
 						img.classList.add("img");
-						img.style.backgroundImage = `url(${d.images[0].url})`;
+						img.style.backgroundImage = `url(${d.value.images[0].url})`;
 						
 						img_wrapper.append(img);
 						
@@ -693,10 +693,10 @@
 						text.classList.add("text");
 						
 						let address = document.createElement("div");
-						address.innerHTML = d.address.formatted;
+						address.innerHTML = d.value.address.formatted;
 						
 						let price = document.createElement("div");
-						price.innerHTML = d.displayPrice;
+						price.innerHTML = d.value.displayPrice;
 						
 						text.append(address,price);
 						
