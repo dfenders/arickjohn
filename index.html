@@ -658,7 +658,7 @@
 				</div>
 				<div style="display:grid;grid-template-columns:1fr;margin-bottom: 10px;">
 				<div>
-					<button type="button">Submit information</button>
+					<button class="btn" type="button">Submit information</button>
 				</div>
 			</div>
 		</div>
@@ -666,7 +666,8 @@
 	</body>
 	<script>
 		
-		document.querySelector("button").addEventListener("click", (event) => {
+		document.querySelector("button.btn").addEventListener("click", (event) => {
+			console.log("here");
 			let first_name = document.querySelector("#firstName").value;
 			let last_name = document.querySelector("#lastName").value;
 			let email = document.querySelector("#email").value;
@@ -690,7 +691,7 @@
 			let timeframe = document.querySelector("#timeframe").value;
 			
 			let aspects = [];
-			document.querySelectorAll("#input[name=aspects]").forEach(a => {
+			document.querySelectorAll("input[name=aspects]").forEach(a => {
 				console.log(a.value);	
 			});
 		});
