@@ -656,11 +656,45 @@
 					</div>
 					<div></div>
 				</div>
+				<div style="display:grid;grid-template-columns:1fr;margin-bottom: 10px;">
+				<div>
+					<button type="button">Submit information</button>
+				</div>
 			</div>
 		</div>
 	</div>
 	</body>
 	<script>
+		
+		document.querySelector("button").addEventListener("click", (event) => {
+			let first_name = document.querySelector("#firstName").value;
+			let last_name = document.querySelector("#lastName").value;
+			let email = document.querySelector("#email").value;
+			let mobile = document.querySelector("#mobile").value;
+			let address = document.querySelector("#address").value;
+			let suburb = document.querySelector("#suburb").value;
+			let city = document.querySelector("#city").value;
+			let postcode = document.querySelector("#postcode").value;
+			let where = document.querySelector("#where").value;
+			
+			let owner = document.querySelector("#owner").value;
+			let bedrooms = document.querySelector("#bedrooms").value;
+			let bathrooms = document.querySelector("#bathrooms").value;
+			let toilets = document.querySelector("#toilets").value;
+			let property = document.querySelector("#property").value;
+			let levels = document.querySelector("#levels").value;
+			let parking = document.querySelector("#parking").value;
+			let age = document.querySelector("#age").value;
+			let sectionSize = document.querySelector("#sectionSize").value;
+			let condition = document.querySelector("#condition").value;
+			let timeframe = document.querySelector("#timeframe").value;
+			
+			let aspects = [];
+			document.querySelectorAll("#input[name=aspects]").forEach(a => {
+				console.log(a.value);	
+			});
+		});
+		
 		let data = {"size":50,"statusCode":"CUR","typeCode":"SAL","sort":"creationTime desc","organisationId":[391],"from":0};
 		fetch("https://raywhiteapi.ep.dynamics.net/v1/listings?apiKey=FB889BB8-4AC9-40C2-829A-DD42D51626DE",{
 			method:'post',
