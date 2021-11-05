@@ -459,7 +459,7 @@
 				<input type="text" id="email" name="email" />
 			</div>
 			<div>
-				<label for="mobile">Mobile</label>
+				<label for="mobile">Phone</label>
 				<input type="text" id="mobile" name="mobile" />
 			</div>
 			<div>
@@ -709,8 +709,23 @@
 			let aspects = [];
 			document.querySelectorAll("input[name=aspects]").forEach(a => {
 				if(a.checked)
-					console.log(a.value);	
+					aspects.push(a.value);	
 			});
+			
+			let url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd2vf3n0fiBMTAUYpJAwrw9bxMTPgRZLKDcxoux0hLhnllvIg/formResponse?"
+			+ `entry.1167040544=${first_name}&`
+			+ `entry.1540292678=${last_name}&`
+			+ `entry.1454018111=${email}&`
+			+ `entry.1976064312=${mobile}&`
+			+ `entry.928309825=${address}&`
+			+ `entry.803291909=${suburb}&`
+			+ `entry.1571466994=${city}&`
+			+ `entry.1782940209=${postcode}&`
+			+ `entry.767460789=${where}&`
+			+ `entry.1469594104=${owner}&`
+			+ `entry.1416222209=${bedrooms}&`
+			
+			fetch()
 		});
 		
 		let data = {"size":50,"statusCode":"CUR","typeCode":"SAL","sort":"creationTime desc","organisationId":[391],"from":0};
