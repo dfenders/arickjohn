@@ -692,7 +692,8 @@
 			
 			let aspects = [];
 			document.querySelectorAll("input[name=aspects]").forEach(a => {
-				console.log(a.value);	
+				if(a.checked)
+					console.log(a.value);	
 			});
 		});
 		
