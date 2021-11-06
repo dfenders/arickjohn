@@ -672,14 +672,13 @@
 					</div>
 					<div></div>
 				</div>
-				<div style="display:grid;grid-template-columns:1fr;margin-bottom: 10px;">
-				<div>
-					<button class="btn" type="button">Submit information</button>
-				</div>
 				<div style="grid-column:span 3">
 					<label for="comments">Any other comments?</label>
 					<textarea id="comments" name="comments" style="min-height:200px;resize: vertical;padding:10px;font-size:16px"></textarea>
 				</div>
+				<div style="display:grid;grid-template-columns:1fr;margin-bottom: 10px;">				
+					<button class="btn" type="button">Submit information</button>
+				</div>				
 			</div>
 		</div>
 	</div>
@@ -751,7 +750,28 @@
 				},
 				'body' : formBody
 			}).then(res => {
-				console.log("done?");	
+				document.querySelector("#firstName").value = "";
+				document.querySelector("#lastName").value = "";
+				document.querySelector("#email").value = "";
+				document.querySelector("#mobile").value = "";
+				document.querySelector("#address").value = "";
+				document.querySelector("#suburb").value = "";
+				document.querySelector("#city").value = "";
+				document.querySelector("#postcode").value = "";
+				document.querySelector("#where").value = "";
+
+				document.querySelector("#owner").value = "";
+				document.querySelector("#bedrooms").value = "";
+				document.querySelector("#bathrooms").value = "";
+				document.querySelector("#toilets").value = "";
+				document.querySelector("#property").value = "";
+				document.querySelector("#levels").value = "";
+				document.querySelector("#parking").value = "";
+				document.querySelector("#age").value = "";
+				document.querySelector("#sectionSize").value = "";
+				document.querySelector("#condition").value = "";
+				document.querySelector("#timeframe").value = "";
+				document.querySelector("#comments").value = "";
 			});
 		});
 		
