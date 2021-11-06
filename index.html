@@ -772,6 +772,12 @@
 				document.querySelector("#condition").value = "";
 				document.querySelector("#timeframe").value = "";
 				document.querySelector("#comments").value = "";
+				
+				document.querySelectorAll("input[name=aspects]").forEach(a => {
+					a.checked = false;	
+				});
+				
+				alert("Thank you for your request!");
 			});
 		});
 		
