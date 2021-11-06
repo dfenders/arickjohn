@@ -560,10 +560,10 @@
 					<option value="notFilled"></option>
 					<option value="none">None</option>
 					<option value="offstreet">Off street only</option>
-					<option value="carport1">Single carport</option>
-					<option value="carport2">Double carport</option>
-					<option value="garage1">Single garage</option>
-					<option value="garage2">Double garage</option>
+					<option value="single_carport">Single carport</option>
+					<option value="souble_carport">Double carport</option>
+					<option value="single_garage">Single garage</option>
+					<option value="double_garage">Double garage</option>
 					<option value="other">Other</option>
 				</select>
 			</div>
@@ -587,16 +587,16 @@
 				<label for="sectionSize">Size of section</label>
 				<select id="sectionSize" name="sectionSize">
 					<option value="notFilled"></option>
-					<option value="200_400">200 - 400 m2</option>
-					<option value="400_600">400 - 600 m2</option>					
-					<option value="600_800">600 - 800 m2</option>
-					<option value="800_1000">800 - 1000 m2</option>
-					<option value="14acre">1/4 acre</option>
-					<option value="12acre">1/2 acre</option>
+					<option value="200_400m2">200 - 400 m2</option>
+					<option value="400_600m2">400 - 600 m2</option>					
+					<option value="600_800m2">600 - 800 m2</option>
+					<option value="800_1000m2">800 - 1000 m2</option>
+					<option value="quarteracre">1/4 acre</option>
+					<option value="halfacre">1/2 acre</option>
 					<option value="1acre">1 acre</option>
 					<option value="2_5acre">2 - 5 acres</option>
 					<option value="5_10acre">5 - 10 acres</option>
-					<option value="10acre">10+ acres</option>
+					<option value="10plusacre">10+ acres</option>
 				</select>
 			</div>
 			<div></div>
@@ -608,11 +608,11 @@
 				<label for="timeframe">Timeframe to sell</label>
 				<select id="timeframe" name="timeframe">
 					<option value="notFilled"></option>
-					<option value="0_3">0 - 3 months</option>
-					<option value="3_6">3 - 6 months</option>					
-					<option value="6_12">6 - 12 months</option>
-					<option value="1_2">1 - 2 years</option>
-					<option value="2">2+ years</option>
+					<option value="0_3months">0 - 3 months</option>
+					<option value="3_6months">3 - 6 months</option>					
+					<option value="6_12months">6 - 12 months</option>
+					<option value="1_2years">1 - 2 years</option>
+					<option value="2plusyears">2+ years</option>
 				</select>
 			</div>
 			<div></div>
@@ -632,10 +632,10 @@
 				</div>
 				<div style="display:grid;grid-template-columns:1fr 1fr 1fr;margin-bottom: 10px;">
 					<div>
-						<input type="checkbox" name="aspects" value="indoor" /><span class="checkbox">Indoor fire</span>
+						<input type="checkbox" name="aspects" value="indoorFire" /><span class="checkbox">Indoor fire</span>
 					</div>
 					<div>
-						<input type="checkbox" name="aspects" value="outdoor" /><span class="checkbox">Outdoor fire</span>
+						<input type="checkbox" name="aspects" value="outdoorFire" /><span class="checkbox">Outdoor fire</span>
 					</div>
 					<div>
 						<input type="checkbox" name="aspects" value="heatpump" /><span class="checkbox">Heat pump / air conditioner</span>
@@ -676,6 +676,10 @@
 				<div>
 					<button class="btn" type="button">Submit information</button>
 				</div>
+				<div style="grid-column:span 3">
+					<label for="comments">Any other comments?</label>
+					<textarea id="comments" name="comments" style="min-height:200px;resize: vertical;padding:10px;font-size:16px"></textarea>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -705,6 +709,7 @@
 			let sectionSize = document.querySelector("#sectionSize").value;
 			let condition = document.querySelector("#condition").value;
 			let timeframe = document.querySelector("#timeframe").value;
+			let comments = document.querySelector("#comments").value;
 			
 			let aspects = [];
 			document.querySelectorAll("input[name=aspects]").forEach(a => {
@@ -725,7 +730,7 @@
 			+ `entry.1782940209=${postcode}&`
 			+ `entry.767460789=${where}&`
 			+ `entry.1469594104=${owner}&`
-		/*	+ `entry.1416222209=${bedrooms}&`
+			+ `entry.1416222209=${bedrooms}&`
 			+ `entry.154422560=${bathrooms}&`
 			+ `entry.541179690=${toilets}&`
 			+ `entry.1457845682=${property}&`
@@ -735,7 +740,8 @@
 			+ `entry.650321258=${sectionSize}&`
 			+ `entry.538910970=${condition}&`
 			+ `entry.1218750401=${timeframe}&`
-			+ `entry.1845690569=${aspects}`*/
+			+ `entry.1845690569=${aspects}&`
+			+ `entry.2118939736=${comments}&`
 			
 			fetch(url, {
 				'method':'post',
