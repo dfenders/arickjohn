@@ -817,14 +817,14 @@ So if you are looking to sell your present home or investment property or you ar
 			let currListings = results.data.filter(x => x.value.statusCode === "CUR");
 			let soldListings = results.data.filter(x => x.value.statusCode === "SLD");
 			
-			currListings.data.forEach(d => {
+			currListings.forEach(d => {
 				d.value.agents.forEach(a => {
 					if(a.email == "arick.john@raywhite.com")					
 						makeListing(d, "#listings .cols");					
 				});
 			});
 
-			soldListings.data.forEach(d => {
+			soldListings.forEach(d => {
 				d.value.agents.forEach(a => {
 					if(a.email == "arick.john@raywhite.com")					
 						makeListing(d, "#sold .cols");					
