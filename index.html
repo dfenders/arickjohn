@@ -801,8 +801,8 @@ So if you are looking to sell your present home or investment property or you ar
 		})
 		.then(res => res.json())
 		.then(results => {
-			let currListings = results.filter(x => x.value.statusCode === "CUR");
-			let soldListings = results.filter(x => x.value.statusCode === "SLD");
+			let currListings = results.data.filter(x => x.value.statusCode === "CUR");
+			let soldListings = results.data.filter(x => x.value.statusCode === "SLD");
 
 			console.log(currListings);
 			console.log(soldListings);
