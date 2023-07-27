@@ -416,26 +416,7 @@ So if you are looking to sell your present home or investment property or you ar
 	<section id="sold">
 		<h1>Sold Properties</h1>
 		<div class="cols">
-			<a href="https://rwinvercargill.co.nz/properties/sold-residential/invercargill/appleby-9812/house/2453326" target="_blank" class="card">
-				<div class="sold">SOLD</div>
-				<div class="img_wrapper">
-					<div class="img" style="background-image:url(sold1.jpg);"></div>
-				</div>
-				<div class="text">
-					<div>64 O'Hara Street, Appleby, Invercargill</div>
-					<div>30 Jan 2021</div>
-				</div>
-			</a>
-			<a href="https://rwinvercargill.co.nz/properties/sold-residential/invercargill/appleby-9812/house/2445531" target="_blank" class="card">
-				<div class="sold">SOLD</div>
-				<div class="img_wrapper">
-					<div class="img" style="background-image:url(sold2.jpg);"></div>
-				</div>
-				<div class="text">
-					<div>95 Conon Street, Appleby, Invercargill</div>
-					<div>25 Jan 2021</div>
-				</div>
-			</a>
+			
 		</div>
 		<div class="more"><a href="https://rwinvercargill.co.nz/agents/arick-john/48614" target="_blank">See more &gt;&gt;</a></div>
 	</section>
@@ -790,6 +771,38 @@ So if you are looking to sell your present home or investment property or you ar
 				alert("Thank you for your request!");
 			});
 		});
+
+		function makeListing(d, selector)
+		{
+			let an = document.createElement("a");
+			an.classList.add("card");
+			let prop_url = d.value.links.filter(l => l.code == "PRL");
+			an.setAttribute("href", prop_url[0].url);
+						
+			let img_wrapper = document.createElement("div");
+			img_wrapper.classList.add("img_wrapper");
+						
+			let img = document.createElement("div");
+			img.classList.add("img");
+			img.style.backgroundImage = `url(${d.value.images[0].url})`;
+						
+			img_wrapper.append(img);
+						
+			let text = document.createElement("div");
+			text.classList.add("text");
+						
+			let address = document.createElement("div");
+			address.innerHTML = d.value.address.formatted;
+						
+			let price = document.createElement("div");
+			price.innerHTML = d.value.displayPrice;
+						
+			text.append(address,price);
+						
+			an.append(img_wrapper,text);
+						
+			document.querySelector(selector).append(an);
+		}
 		
 		let data = {"size":50,"statusCode":["CUR", "SLD"],"typeCode":"SAL","sort":"creationTime desc","organisationId":[795],"from":0};
 		fetch("https://raywhiteapi.ep.dynamics.net/v1/listings?apiKey=403BEF83-BBBB-479D-BF4B-A6DB649E7CE1",{
@@ -803,43 +816,18 @@ So if you are looking to sell your present home or investment property or you ar
 		.then(results => {
 			let currListings = results.data.filter(x => x.value.statusCode === "CUR");
 			let soldListings = results.data.filter(x => x.value.statusCode === "SLD");
-
-			console.log(currListings);
-			console.log(soldListings);
 			
-			results.data.forEach(d => {
+			currListings.data.forEach(d => {
 				d.value.agents.forEach(a => {
-					if(a.email == "arick.john@raywhite.com")
-					{
-						let an = document.createElement("a");
-						an.classList.add("card");
-						let prop_url = d.value.links.filter(l => l.code == "PRL");
-						an.setAttribute("href", prop_url[0].url);
-						
-						let img_wrapper = document.createElement("div");
-						img_wrapper.classList.add("img_wrapper");
-						
-						let img = document.createElement("div");
-						img.classList.add("img");
-						img.style.backgroundImage = `url(${d.value.images[0].url})`;
-						
-						img_wrapper.append(img);
-						
-						let text = document.createElement("div");
-						text.classList.add("text");
-						
-						let address = document.createElement("div");
-						address.innerHTML = d.value.address.formatted;
-						
-						let price = document.createElement("div");
-						price.innerHTML = d.value.displayPrice;
-						
-						text.append(address,price);
-						
-						an.append(img_wrapper,text);
-						
-						document.querySelector("#listings .cols").append(an);
-					}
+					if(a.email == "arick.john@raywhite.com")					
+						makeListing(d, "#listings .cols");					
+				});
+			});
+
+			soldListings.data.forEach(d => {
+				d.value.agents.forEach(a => {
+					if(a.email == "arick.john@raywhite.com")					
+						makeListing(d, "#sold .cols");					
 				});
 			});
 		})
