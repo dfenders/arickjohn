@@ -814,8 +814,8 @@ So if you are looking to sell your present home or investment property or you ar
 		})
 		.then(res => res.json())
 		.then(results => {
-			let currListings = results.data.filter(x => x.value.statusCode === "CUR").slice(5);
-			let soldListings = results.data.filter(x => x.value.statusCode === "SLD").slice(5);
+			let currListings = results.data.filter(x => x.value.statusCode === "CUR").slice(0,5);
+			let soldListings = results.data.filter(x => x.value.statusCode === "SLD").slice(0,5);
 			
 			currListings.forEach(d => {
 				//d.value.agents.forEach(a => {
