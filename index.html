@@ -791,7 +791,7 @@ So if you are looking to sell your present home or investment property or you ar
 			});
 		});
 		
-		let data = {"size":50,"statusCode":"CUR","typeCode":"SAL","sort":"creationTime desc","organisationId":[795],"from":0};
+		let data = {"size":50,"statusCode":["CUR", "SLD"],"typeCode":"SAL","sort":"creationTime desc","organisationId":[795],"from":0};
 		fetch("https://raywhiteapi.ep.dynamics.net/v1/listings?apiKey=403BEF83-BBBB-479D-BF4B-A6DB649E7CE1",{
 			method:'post',
 			headers: {
@@ -801,6 +801,7 @@ So if you are looking to sell your present home or investment property or you ar
 		})
 		.then(res => res.json())
 		.then(results => {
+			console.log(results);
 			results.data.forEach(d => {
 				d.value.agents.forEach(a => {
 					if(a.email == "arick.john@raywhite.com")
