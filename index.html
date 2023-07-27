@@ -801,7 +801,12 @@ So if you are looking to sell your present home or investment property or you ar
 		})
 		.then(res => res.json())
 		.then(results => {
-			console.log(results);
+			let currListings = results.filter(x => x.value.statusCode === "CUR");
+			let soldListings = results.filter(x => x.value.statusCode === "SLD");
+
+			console.log(currListings);
+			console.log(soldListings);
+			
 			results.data.forEach(d => {
 				d.value.agents.forEach(a => {
 					if(a.email == "arick.john@raywhite.com")
