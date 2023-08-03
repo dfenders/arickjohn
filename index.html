@@ -212,7 +212,7 @@
 		border-top:20px solid #ffe512;
 	}
 	
-	.cols .text div:first-of-type{
+	.cols .text > div:first-of-type{
 		font-family:"Hahmlet", sans-serif;	
 		font-weight:500;
 		font-size:24px;
@@ -303,6 +303,13 @@
 		display:flex;
 		justify-content:space-between;
 		width:100%;
+	}
+
+	.top_section .label{
+		font-family:sans-serif;
+		font-weight:300;
+		color:#ccc;
+		font-size:14px;
 	}
 	
 	
@@ -802,6 +809,7 @@ So if you are looking to sell your present home or investment property or you ar
 
 			let label = document.createElement("div");
 			label.innerHTML = "House for sale";
+			label.classList.add("label");
 
 			let price = document.createElement("div");
 			price.innerHTML = d.value.displayPrice;
