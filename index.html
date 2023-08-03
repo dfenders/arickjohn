@@ -826,7 +826,7 @@ So if you are looking to sell your present home or investment property or you ar
 						
 			let address = document.createElement("div");
 			address.classList.add("address");
-			address.innerHTML = d.value.address.description;
+			address.innerHTML = `${d.value.address.streetNumber} ${d.value.address.streetName} ${d.value.address.streetType}, ${d.value.address.suburb}`;
 											
 			text.append(top_section,address);
 						
