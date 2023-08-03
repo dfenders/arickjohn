@@ -298,6 +298,12 @@
 		background:white;
 		color:black;
 	}
+
+	.top_section{
+		display:flex;
+		justify-content:space-between;
+		width:100%;
+	}
 	
 	
 	@media only screen 
@@ -790,13 +796,21 @@ So if you are looking to sell your present home or investment property or you ar
 						
 			let text = document.createElement("div");
 			text.classList.add("text");
+
+			let top_section = document.createElement("div");
+			top_section.classList.add("top_section");
+
+			let label = document.createElement("div");
+			label.innerHTML = "House for sale";
+
+			let price = document.createElement("div");
+			price.innerHTML = d.value.displayPrice;
+
+			top_section.append(label, price);
 						
 			let address = document.createElement("div");
 			address.innerHTML = d.value.address.formatted;
-						
-			let price = document.createElement("div");
-			price.innerHTML = d.value.displayPrice;
-						
+											
 			text.append(address,price);
 						
 			an.append(img_wrapper,text);
