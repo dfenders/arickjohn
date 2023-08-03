@@ -318,6 +318,16 @@
 	.address{
 		font-weight:bold;
 	}
+
+	.hidden_menu{
+		display:none;
+		position:fixed;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		background:black;
+	}
 	
 	
 	@media only screen 
@@ -368,6 +378,9 @@
 	}
 </style>
 <body>
+	<div class="hidden_menu">
+
+	</div>
 	<div class="bg"></div>
 	<nav>
 		<i></i>
@@ -862,6 +875,10 @@ So if you are looking to sell your present home or investment property or you ar
 				//});
 			});
 		})
+
+		document.querySelector(".mobile_menu").addEventListener("click", e => {
+			document.querySelector(".hidden_menu").style.display = "block";
+		});
 		
 		window.onscroll = function() {scrollFunction()};
 
