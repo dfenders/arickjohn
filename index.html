@@ -790,6 +790,7 @@ So if you are looking to sell your present home or investment property or you ar
 
 		function makeListing(d, selector)
 		{
+			console.log(d);
 			let an = document.createElement("a");
 			an.classList.add("card");
 			let prop_url = d.value.links.filter(l => l.code == "PRL");
@@ -811,7 +812,7 @@ So if you are looking to sell your present home or investment property or you ar
 			top_section.classList.add("top_section");
 
 			let label = document.createElement("div");
-			label.innerHTML = "House for sale";
+			label.innerHTML = "House";
 			label.classList.add("label");
 
 			let price = document.createElement("div");
