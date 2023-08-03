@@ -328,7 +328,10 @@
 		bottom:0;
 		background:black;
 		z-index: 1000;
-		color:white;
+		color:white;		    
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 	
 	
@@ -882,7 +885,7 @@ So if you are looking to sell your present home or investment property or you ar
 		})
 
 		document.querySelector(".mobile_menu").addEventListener("click", e => {
-			document.querySelector(".hidden_menu").style.display = "block";
+			document.querySelector(".hidden_menu").style.display = "flex";
 		});
 		
 		window.onscroll = function() {scrollFunction()};
