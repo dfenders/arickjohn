@@ -320,6 +320,7 @@
 	}
 
 	.hidden_menu{
+		font-size:16px;
 		display:none;
 		position:fixed;
 		top:0;
@@ -332,6 +333,12 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+	}
+
+	.close_menu{
+		position:absolute;
+		top:0;
+		right:0;
 	}
 	
 	
@@ -384,6 +391,7 @@
 </style>
 <body>
 	<div class="hidden_menu">
+		<div class="close_menu">X</div>
 		<div><a href="#sold">Sold</a></div>
 		<div><a href="#listings">Properties</a></div>
 		<div><a href="#">Development</a></div>
