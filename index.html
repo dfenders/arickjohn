@@ -320,7 +320,7 @@
 	}
 
 	.hidden_menu{
-		font-size:16px;
+		font-size:32px;
 		display:none;
 		position:fixed;
 		top:0;
@@ -337,8 +337,9 @@
 
 	.close_menu{
 		position:absolute;
-		top:0;
-		right:0;
+		top: 30px;
+    		right: 30px;		
+		cursor:pointer;
 	}
 	
 	
@@ -391,7 +392,7 @@
 </style>
 <body>
 	<div class="hidden_menu">
-		<div class="close_menu">X</div>
+		<div class="close_menu"><span class="fas fa-close"></span></div>
 		<div><a href="#sold">Sold</a></div>
 		<div><a href="#listings">Properties</a></div>
 		<div><a href="#">Development</a></div>
@@ -894,6 +895,10 @@ So if you are looking to sell your present home or investment property or you ar
 
 		document.querySelector(".mobile_menu").addEventListener("click", e => {
 			document.querySelector(".hidden_menu").style.display = "flex";
+		});
+
+		document.querySelector(".close_menu").addEventListener("click", e => {
+			document.querySelector(".hidden_menu").style.display = "none";
 		});
 		
 		window.onscroll = function() {scrollFunction()};
