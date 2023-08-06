@@ -397,6 +397,7 @@
 <body>
 	<div class="hidden_menu">
 		<div class="close_menu"><i class="fa fa-times"></i></div>
+		<div><a href="#appraisal">Online appraisal</a></div>
 		<div><a href="#sold">Sold</a></div>
 		<div><a href="#listings">Properties</a></div>
 		<div><a href="#">Development</a></div>
@@ -407,8 +408,7 @@
 		<i></i>
 		<div class="name">Arick John</div>
 		<span class="mobile_menu fas fa-bars"></span>
-		<div>
-			<div><a href="#appraisal">Online appraisal</a></div>
+		<div>			
 			<div><a href="#sold">Sold</a></div>
 			<div><a href="#listings">Properties</a></div>
 			<!--<div><a href="#">Development</a></div>-->
@@ -904,6 +904,12 @@ So if you are looking to sell your present home or investment property or you ar
 
 		document.querySelector(".close_menu").addEventListener("click", e => {
 			document.querySelector(".hidden_menu").style.display = "none";
+		});
+
+		document.querySelectorAll(".hidden_menu a").forEach(x => {
+			x.addEventListener("click", e => {
+				document.querySelector(".close_menu").close();
+			});
 		});
 		
 		window.onscroll = function() {scrollFunction()};
