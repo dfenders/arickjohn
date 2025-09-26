@@ -866,7 +866,7 @@ Whether you're buying your first home, investing, or selling a property, Team Fa
 						
 			let img = document.createElement("div");
 			img.classList.add("img");
-			img.style.backgroundImage = `url(${d.CoverImageURL})`;
+			img.style.backgroundImage = d.CoverImageURL ? `url(${d.CoverImageURL})` : 'url(arick-farhan.jpg)';
 						
 			img_wrapper.append(img);
 						
