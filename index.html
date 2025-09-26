@@ -195,7 +195,7 @@
 	.cols{
 		display:grid;
 		grid-template-columns:repeat(3,1fr);
-		grid-gap: 120px;
+		grid-gap: 60px;
 	}
 	
 	.cols > div, .cols > a{
@@ -881,7 +881,7 @@ Whether you're buying your first home, investing, or selling a property, Team Fa
 			label.classList.add("label");
 
 			let price = document.createElement("div");
-			price.innerHTML = d.ListingPrice ? d.ListingPrice : "";
+			price.innerHTML = d.ListingPrice ? `$${d.ListingPrice}` : d.SaleTypeTitle;
 
 			top_section.append(label, price);
 						
