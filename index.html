@@ -271,6 +271,23 @@
 	    background-color: #f1001e;
 	    opacity: .9;
 	}
+
+	.under_contract{
+		position: absolute;
+	    top: 0;
+	    left: 0;
+	    z-index: 1;
+	    height: 40px;
+	    padding: 0 20px;
+	    line-height: 40px;
+	    color: #fff;
+	    font-weight: 700;
+	    min-width: 13em;
+	    text-align: center;
+	    background-color: #f59c23;
+    	opacity: .9;
+	}
+	
 	
 	.paragraph{
 		line-height:1.5;	
@@ -878,6 +895,14 @@ Whether you're buying your first home, investing, or selling a property, Team Fa
 				sold.classList.add("sold");
 				sold.innerText = "SOLD";
 				img_wrapper.append(sold);
+			}
+
+			if(d.Status === "UNDER_CONTRACT")
+			{
+				let contract = document.createElement("div");
+				contract.classList.add("under_contract");
+				contract.innerText = "UNDER CONTRACT";
+				img_wrapper.append(contract);
 			}
 			img_wrapper.append(img);
 						
