@@ -855,18 +855,18 @@ Whether you're buying your first home, investing, or selling a property, Team Fa
 
 		function makeListing(d, selector)
 		{
-			console.log(d);
+			//console.log(d);
 			let an = document.createElement("a");
 			an.classList.add("card");
-			let prop_url = d.value.links.filter(l => l.code == "PRL");
-			an.setAttribute("href", prop_url[0].url);
+			let prop_url = `https://arizto.co.nz${d.Link}`
+			an.setAttribute("href", prop_url);
 						
 			let img_wrapper = document.createElement("div");
 			img_wrapper.classList.add("img_wrapper");
 						
 			let img = document.createElement("div");
 			img.classList.add("img");
-			img.style.backgroundImage = `url(${d.value.images[0].url})`;
+			img.style.backgroundImage = `url(${d.CoverImageURL})`;
 						
 			img_wrapper.append(img);
 						
@@ -881,13 +881,13 @@ Whether you're buying your first home, investing, or selling a property, Team Fa
 			label.classList.add("label");
 
 			let price = document.createElement("div");
-			price.innerHTML = d.value.displayPrice;
+			price.innerHTML = d.ListingPrice;
 
 			top_section.append(label, price);
 						
 			let address = document.createElement("div");
 			address.classList.add("address");
-			address.innerHTML = `${d.value.address.streetNumber} ${d.value.address.streetName} ${d.value.address.streetType}, ${d.value.address.suburb}`;
+			address.innerHTML = d.Address;
 											
 			text.append(top_section,address);
 						
@@ -896,13 +896,13 @@ Whether you're buying your first home, investing, or selling a property, Team Fa
 			document.querySelector(selector).append(an);
 		}
 		
-		let data = {"size":50,"statusCode":["CUR", "SLD"],"typeCode":"SAL","sort":"creationTime desc","organisationId":[795],"from":0, "memberId": 48614};
 		fetch("https://proxy.cors.sh/https://arizto.co.nz/api/v1/listings/?Agent=37817&Default=true&Order=latest&Page=1&PageSize=15")
 		.then(res => res.json())
 		.then(results => {
 			console.log(results);
-			/*let currListings = results.data.filter(x => x.value.statusCode === "CUR").slice(0,5);
-			let soldListings = results.data.filter(x => x.value.statusCode === "SLD").slice(0,5);
+			let currListings = results.Items.filter(x => x.Status === "LISTED" || x.Status === "UNDER_OFFER").slice(0,5);
+			let soldListings = results.Items.filter(x => x.Status === "SOLD").slice(0,5);
+			
 			
 			currListings.forEach(d => {
 				//d.value.agents.forEach(a => {
@@ -910,7 +910,7 @@ Whether you're buying your first home, investing, or selling a property, Team Fa
 						makeListing(d, "#listings .cols");					
 				//});
 			});
-
+/*
 			soldListings.forEach(d => {
 				//d.value.agents.forEach(a => {
 					//if(a.email == "arick.john@raywhite.com")					
