@@ -897,13 +897,7 @@ Whether you're buying your first home, investing, or selling a property, Team Fa
 		}
 		
 		let data = {"size":50,"statusCode":["CUR", "SLD"],"typeCode":"SAL","sort":"creationTime desc","organisationId":[795],"from":0, "memberId": 48614};
-		fetch("https://arizto.co.nz/api/v1/listings/?Agent=37817&Default=true&Order=latest&Page=1&PageSize=15",{
-			method:'get',
-			headers: {
-			      'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(data)
-		})
+		fetch("https://arizto.co.nz/api/v1/listings/?Agent=37817&Default=true&Order=latest&Page=1&PageSize=15")
 		.then(res => res.json())
 		.then(results => {
 			console.log(results);
