@@ -897,8 +897,8 @@ Whether you're buying your first home, investing, or selling a property, Team Fa
 		}
 		
 		let data = {"size":50,"statusCode":["CUR", "SLD"],"typeCode":"SAL","sort":"creationTime desc","organisationId":[795],"from":0, "memberId": 48614};
-		fetch("https://raywhiteapi.ep.dynamics.net/v1/listings?apiKey=403BEF83-BBBB-479D-BF4B-A6DB649E7CE1",{
-			method:'post',
+		fetch("https://arizto.co.nz/api/v1/listings/?Agent=37817&Default=true&Order=latest&Page=1&PageSize=15",{
+			method:'get',
 			headers: {
 			      'Content-Type': 'application/json'
 			},
@@ -906,7 +906,8 @@ Whether you're buying your first home, investing, or selling a property, Team Fa
 		})
 		.then(res => res.json())
 		.then(results => {
-			let currListings = results.data.filter(x => x.value.statusCode === "CUR").slice(0,5);
+			console.log(results);
+			/*let currListings = results.data.filter(x => x.value.statusCode === "CUR").slice(0,5);
 			let soldListings = results.data.filter(x => x.value.statusCode === "SLD").slice(0,5);
 			
 			currListings.forEach(d => {
@@ -921,7 +922,7 @@ Whether you're buying your first home, investing, or selling a property, Team Fa
 					//if(a.email == "arick.john@raywhite.com")					
 						makeListing(d, "#sold .cols");					
 				//});
-			});
+			});*/
 		})
 
 		document.querySelector(".mobile_menu").addEventListener("click", e => {
