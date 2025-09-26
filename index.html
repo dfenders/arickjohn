@@ -877,11 +877,11 @@ Whether you're buying your first home, investing, or selling a property, Team Fa
 			top_section.classList.add("top_section");
 
 			let label = document.createElement("div");
-			label.innerHTML = "";
+			label.innerHTML = d.Title;
 			label.classList.add("label");
 
 			let price = document.createElement("div");
-			price.innerHTML = d.ListingPrice;
+			price.innerHTML = d.ListingPrice ? d.ListingPrice : "";
 
 			top_section.append(label, price);
 						
@@ -910,13 +910,13 @@ Whether you're buying your first home, investing, or selling a property, Team Fa
 						makeListing(d, "#listings .cols");					
 				//});
 			});
-/*
+
 			soldListings.forEach(d => {
 				//d.value.agents.forEach(a => {
 					//if(a.email == "arick.john@raywhite.com")					
 						makeListing(d, "#sold .cols");					
 				//});
-			});*/
+			});
 		})
 
 		document.querySelector(".mobile_menu").addEventListener("click", e => {
