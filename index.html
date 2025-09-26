@@ -896,7 +896,7 @@ Whether you're buying your first home, investing, or selling a property, Team Fa
 			document.querySelector(selector).append(an);
 		}
 		
-		fetch("https://proxy.cors.sh/https://arizto.co.nz/api/v1/listings/?Agent=37817&Default=true&Order=latest&Page=1&PageSize=15")
+		fetch("listings.json")
 		.then(res => res.json())
 		.then(results => {
 			console.log(results);
