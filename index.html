@@ -260,6 +260,7 @@
 		position: absolute;
 	    top: 0;
 	    left: 0;
+		right:0;
 	    z-index: 1;
 	    height: 40px;
 	    padding: 0 20px;
@@ -276,6 +277,7 @@
 		position: absolute;
 	    top: 0;
 	    left: 0;
+		right:0;
 	    z-index: 1;
 	    height: 40px;
 	    padding: 0 20px;
@@ -897,7 +899,7 @@ Whether you're buying your first home, investing, or selling a property, Team Fa
 				img_wrapper.append(sold);
 			}
 
-			if(d.Status === "UNDER_CONTRACT")
+			if(d.Status === "UNDER_OFFER")
 			{
 				let contract = document.createElement("div");
 				contract.classList.add("under_contract");
